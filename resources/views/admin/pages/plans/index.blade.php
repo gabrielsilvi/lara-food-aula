@@ -11,7 +11,13 @@
     <div class="card">
 
         <div class="card-header">
-            #filtros
+           <form action="{{route('plans.search')}}" method="POST" class="form form-inline">
+            @csrf
+                <form-group>
+                    <input type="text" name="filter" placeholder="Nome do Plano" class="form-control" value="{{$filters['filter'] ?? ''}}">
+                    <button class="form-control btn btn-dark" type="submit">Pesquisar</button>
+                </form-group>
+            </form> 
         </div>
         <div class="card-body">
             <table class="table table-condensed">
@@ -32,7 +38,7 @@
                                 {{$plan->price}}
                             </td>
                             <td>
-                                <a href="{{route('plans.show', $plan->url)}}" class="btn btn-warning">Visualizar</a>
+                                <a href="{{route('plans.show', $plan->url)}}" class="btn btn-secondary">Visualizar</a>
                             </td>
                         </tr>
                     @endforeach
@@ -40,7 +46,11 @@
             </table>
         </div>
         <div class="card-footer">
-            {{ $plans->links() }}
+            @if (isset($filters))
+                {{ $plans->appends($filters)->links() }} 
+            @else    
+                {{ $plans->links() }}
+            @endif
         </div>
     </div>
 @stop
