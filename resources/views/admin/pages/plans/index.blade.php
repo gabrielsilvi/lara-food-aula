@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Listagem de Planos</p>
+    <p>Listagem de Planos <a href="{{route('plans.create')}}" class="btn btn-dark">+ Cadastrar</a></p>
     <div class="card">
 
         <div class="card-header">
@@ -18,8 +18,8 @@
                 <thead>                   
                     <tr>
                         <th>Nome</th>
-                        <th>Preco</th>
-                        <th width="50">Acoes</th>
+                        <th>Preço</th>
+                        <th width="50">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@
                                 {{$plan->price}}
                             </td>
                             <td>
-                                <a href="" class="btn btn-warning">Visualizar</a>
+                                <a href="{{route('plans.show', $plan->url)}}" class="btn btn-warning">Visualizar</a>
                             </td>
                         </tr>
                     @endforeach
