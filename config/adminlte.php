@@ -228,8 +228,9 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'Planos',
+            'text'         => ' Planos',
             'url'          =>'admin/plans',
+            'icon'         => 'fas fa-stream'
             
         ],
         

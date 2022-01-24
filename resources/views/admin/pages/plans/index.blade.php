@@ -7,15 +7,14 @@
 @stop
 
 @section('content')
-    <p>Listagem de Planos <a href="{{route('plans.create')}}" class="btn btn-dark">+ Cadastrar</a></p>
+    <p>Listagem de Planos <a href="{{route('plans.create')}}" class="btn btn-dark"><i class="fas fa-plus"></i> Cadastrar</a></p>
     <div class="card">
-
         <div class="card-header">
            <form action="{{route('plans.search')}}" method="POST" class="form form-inline">
             @csrf
                 <form-group>
                     <input type="text" name="filter" placeholder="Nome do Plano" class="form-control" value="{{$filters['filter'] ?? ''}}">
-                    <button class="form-control btn btn-dark" type="submit">Pesquisar</button>
+                    <button class="form-control btn btn-dark" type="submit"><i class="fas fa-search"></i> Pesquisar</button>
                 </form-group>
             </form> 
         </div>
@@ -25,7 +24,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th width="50">Ações</th>
+                        <th width="190">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +38,7 @@
                             </td>
                             <td>
                                 <a href="{{route('plans.show', $plan->url)}}" class="btn btn-secondary">Visualizar</a>
+                                <a href="{{route('plans.edit', $plan->url)}}" class="btn btn-warning">Editar</a>
                             </td>
                         </tr>
                     @endforeach

@@ -24,7 +24,7 @@
                     <input type="text" name="description" class="form-control" placeholder="Descricao">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Enviar</button>
+                    <button type="submit" class="btn btn-dark">Criar Plano</button>
                 </div>
             </form>
         </div>
