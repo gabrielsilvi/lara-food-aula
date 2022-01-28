@@ -34,7 +34,7 @@
                                 {{$plan->name}}
                             </td>
                             <td>
-                                {{$plan->price}}
+                               R$ {{$plan->price}}
                             </td>
                             <td>
                                 <a href="{{route('plans.show', $plan->url)}}" class="btn btn-secondary">Visualizar</a>
