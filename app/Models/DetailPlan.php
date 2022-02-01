@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailPlan extends Model
 {
-    protected $table = 'datails_plan';
+    protected $table = 'datail_plans';
 
     public function plan(){
         return $this->belongsTo(Plan::class);
