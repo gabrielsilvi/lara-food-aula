@@ -13,7 +13,7 @@ class CreateDetailPlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('datail_plans', function (Blueprint $table) {
+        Schema::create('datails_plan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('plan_id');
             $table->string('name');

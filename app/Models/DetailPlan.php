@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailPlan extends Model
 {
-    protected $table = 'datail_plans';
+    protected $table = 'datails_plan';
+
+    protected $fillable = ['name'];
 
     public function plan(){
-        return $this->belongsTo(Plan::class);
+         $this->belongsTo(Plan::class);
      }
 }

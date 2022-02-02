@@ -3,7 +3,7 @@
 @section('title', "Detalhes do plano {$plan->name}")
 
 @section('content_header')
-    <h1>Detalhes do plano {{$plan->name}}</h1>
+    <h1>Detalhes do plano {{$plan->name}} <a href="{{route('details.plan.create', $plan->url)}}" class="btn btn-dark"><i class="fas fa-plus"></i> Cadastrar</a></h1>
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
                     <tr>
                         <th>Nome</th>
                         
-                        <th width="190">Ações</th>
+                        <th width="250">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,9 +24,6 @@
                         <tr>
                             <td>
                                 {{$detail->name}}
-                            </td>
-                            <td>
-                               R$ {{$plan->price}}
                             </td>
                             <td>
                                 <a href="{{route('plans.show', $plan->url)}}" class="btn btn-secondary">Visualizar</a>
