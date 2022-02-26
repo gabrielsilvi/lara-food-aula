@@ -11,6 +11,9 @@
     <div class="card">
         
         <div class="card-body">
+
+            @include('admin.includes.alerts')
+
             <table class="table table-condensed">
                 <thead>                   
                     <tr>
@@ -26,7 +29,7 @@
                                 {{$detail->name}}
                             </td>
                             <td>
-                                <a href="{{route('plans.show', $plan->url)}}" class="btn btn-secondary">Visualizar</a>
+                                <a href="{{route('details.plan.show', [$plan->url, $detail->id])}}" class="btn btn-secondary">Visualizar</a>
                                 <a href="{{route('details.plan.edit', [$plan->url, $detail->id])}}" class="btn btn-warning">Editar</a>
                             </td>
                         </tr>
