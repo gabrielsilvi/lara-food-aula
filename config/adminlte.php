@@ -228,9 +228,16 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => ' Planos',
+            'text'         => 'Planos',
             'url'          =>'admin/plans',
-            'icon'         => 'fas fa-stream'
+            'icon'         => 'far fa-folder-open'
+            
+        ],
+        [
+            'type'         => 'navbar-search',
+            'text'         => 'Perfis',
+            'url'          =>'admin/profiles',
+            'icon'         => 'far fa-id-card'
             
         ],
         
