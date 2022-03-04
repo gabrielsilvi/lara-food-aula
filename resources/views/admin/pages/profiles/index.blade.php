@@ -5,7 +5,7 @@
 @section('content_header')
     <h1>Perfis</h1>
 @stop
-{{-- teste --}}
+
 @section('content')
     <p>Listagem de Perfis <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus"></i> Cadastrar</a></p>
     <div class="card">
