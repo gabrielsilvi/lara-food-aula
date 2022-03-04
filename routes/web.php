@@ -7,6 +7,10 @@ Route::prefix('admin')->group(function(){
     /*
     * Routes Details Plans
     */
+    Route::resource('profiles', Admin\ACL\ProfileController::class);
+    /*
+    * Routes Details Plans
+    */
     Route::get('plans/{url}/details/create',[Admin\DetailPlanController::class, 'create'])->name('details.plan.create');
     Route::get('plans/{url}/details/{idDetail}',[Admin\DetailPlanController::class, 'show'])->name('details.plan.show');
     Route::put('plans/{url}/details/{idDetail}',[Admin\DetailPlanController::class, 'update'])->name('details.plan.update');
