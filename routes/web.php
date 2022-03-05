@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin;
 
 Route::prefix('admin')->group(function(){
     /*
-    * Routes Details Plans
+    * Routes Profile 
     */
     Route::resource('profiles', Admin\ACL\ProfileController::class);
     /*

@@ -30,7 +30,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.profiles.create');
     }
 
     /**
@@ -41,7 +41,9 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->repository->create($request->all());
+
+       return redirect()->route('profiles.index');
     }
 
     /**
@@ -63,7 +65,10 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(!$profile = $this->repository->find($id)){
+            return redirect()->back();
+        }
+        return view('admin.pages.profiles.edit', compact('profile'));
     }
 
     /**
@@ -75,7 +80,11 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(!$profile = $this->repository->find($id)){
+            return redirect()->back();
+        }
+        $profile->update($request->all());
+        return redirect()->route('profiles.index');
     }
 
     /**
