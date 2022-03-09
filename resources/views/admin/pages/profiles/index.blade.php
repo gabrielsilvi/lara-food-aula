@@ -10,10 +10,10 @@
     <p>Listagem de Perfis <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus"></i> Cadastrar</a></p>
     <div class="card">
         <div class="card-header">
-           <form action="" method="POST" class="form form-inline">
+           <form action="{{route('profiles.search')}}" method="POST" class="form form-inline">
             @csrf
                 <form-group>
-                    <input type="text" name="filter" placeholder="Nome do Perfil" class="form-control" value="{{$filters['filter'] ?? ''}}">
+                    <input type="text" name="filter" placeholder="Filtro" class="form-control" value="{{$filters['filter'] ?? ''}}">
                     <button class="form-control btn btn-dark" type="submit"><i class="fas fa-search"></i> Pesquisar</button>
                 </form-group>
             </form> 
@@ -33,7 +33,7 @@
                                 {{$profile->name}}
                             </td>
                             <td>
-                                <a href="{{route('plans.show', $profile->id)}}" class="btn btn-secondary">Visualizar</a>
+                                <a href="{{route('profiles.show', $profile->id)}}" class="btn btn-secondary">Visualizar</a>
                                 <a href="{{route('profiles.edit', $profile->id)}}" class="btn btn-warning">Editar</a>
                             </td>
                         </tr>

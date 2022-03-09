@@ -7,6 +7,7 @@ Route::prefix('admin')->group(function(){
     /*
     * Routes Profile 
     */
+    Route::any('profiles/search',[Admin\ACL\ProfileController::class, 'search'])->name('profiles.search');
     Route::resource('profiles', Admin\ACL\ProfileController::class);
     /*
     * Routes Details Plans
